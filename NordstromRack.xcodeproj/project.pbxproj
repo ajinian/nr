@@ -14,6 +14,8 @@
 		068D7FB124D4CD3C00AB1549 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068D7FB024D4CD3C00AB1549 /* Assets.xcassets */; };
 		068D7FB424D4CD3C00AB1549 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 068D7FB224D4CD3C00AB1549 /* LaunchScreen.storyboard */; };
 		068D7FBF24D4CD3C00AB1549 /* NordstromRackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D7FBE24D4CD3C00AB1549 /* NordstromRackTests.swift */; };
+		1AE32C703991E8D1496E9AD0 /* Pods_NordstromRackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAC2189669C0C4937559B71 /* Pods_NordstromRackTests.framework */; };
+		9B8AE6655022D77CF6E8E410 /* Pods_NordstromRack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C93757A63D11D94B70A78CAC /* Pods_NordstromRack.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,12 @@
 		068D7FBA24D4CD3C00AB1549 /* NordstromRackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NordstromRackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		068D7FBE24D4CD3C00AB1549 /* NordstromRackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NordstromRackTests.swift; sourceTree = "<group>"; };
 		068D7FC024D4CD3C00AB1549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BAC2189669C0C4937559B71 /* Pods_NordstromRackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NordstromRackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		153896C37B83E437FD7EA5E4 /* Pods-NordstromRack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NordstromRack.release.xcconfig"; path = "Target Support Files/Pods-NordstromRack/Pods-NordstromRack.release.xcconfig"; sourceTree = "<group>"; };
+		3095C590015B38F08D933A17 /* Pods-NordstromRackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NordstromRackTests.debug.xcconfig"; path = "Target Support Files/Pods-NordstromRackTests/Pods-NordstromRackTests.debug.xcconfig"; sourceTree = "<group>"; };
+		42BE8F18CFDB612DC004297D /* Pods-NordstromRack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NordstromRack.debug.xcconfig"; path = "Target Support Files/Pods-NordstromRack/Pods-NordstromRack.debug.xcconfig"; sourceTree = "<group>"; };
+		C93757A63D11D94B70A78CAC /* Pods_NordstromRack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NordstromRack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E64F654C36E82DE06C6FCD02 /* Pods-NordstromRackTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NordstromRackTests.release.xcconfig"; path = "Target Support Files/Pods-NordstromRackTests/Pods-NordstromRackTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8AE6655022D77CF6E8E410 /* Pods_NordstromRack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE32C703991E8D1496E9AD0 /* Pods_NordstromRackTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +74,8 @@
 				068D7FA624D4CD3800AB1549 /* NordstromRack */,
 				068D7FBD24D4CD3C00AB1549 /* NordstromRackTests */,
 				068D7FA524D4CD3800AB1549 /* Products */,
+				1017A1A131B83AC481B46AF9 /* Pods */,
+				2FE1FEDB860E98456115682A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +111,27 @@
 			path = NordstromRackTests;
 			sourceTree = "<group>";
 		};
+		1017A1A131B83AC481B46AF9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				42BE8F18CFDB612DC004297D /* Pods-NordstromRack.debug.xcconfig */,
+				153896C37B83E437FD7EA5E4 /* Pods-NordstromRack.release.xcconfig */,
+				3095C590015B38F08D933A17 /* Pods-NordstromRackTests.debug.xcconfig */,
+				E64F654C36E82DE06C6FCD02 /* Pods-NordstromRackTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2FE1FEDB860E98456115682A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C93757A63D11D94B70A78CAC /* Pods_NordstromRack.framework */,
+				0BAC2189669C0C4937559B71 /* Pods_NordstromRackTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 068D7FC324D4CD3C00AB1549 /* Build configuration list for PBXNativeTarget "NordstromRack" */;
 			buildPhases = (
+				3FD07070C49B5C375DCF8368 /* [CP] Check Pods Manifest.lock */,
 				068D7FA024D4CD3800AB1549 /* Sources */,
 				068D7FA124D4CD3800AB1549 /* Frameworks */,
 				068D7FA224D4CD3800AB1549 /* Resources */,
+				FD2F7B8B85C6D43451D204FF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,6 +158,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 068D7FC624D4CD3C00AB1549 /* Build configuration list for PBXNativeTarget "NordstromRackTests" */;
 			buildPhases = (
+				37D1AD06F87D048B638CAFB6 /* [CP] Check Pods Manifest.lock */,
 				068D7FB624D4CD3C00AB1549 /* Sources */,
 				068D7FB724D4CD3C00AB1549 /* Frameworks */,
 				068D7FB824D4CD3C00AB1549 /* Resources */,
@@ -194,6 +230,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37D1AD06F87D048B638CAFB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NordstromRackTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FD07070C49B5C375DCF8368 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NordstromRack-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD2F7B8B85C6D43451D204FF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NordstromRack/Pods-NordstromRack-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NordstromRack/Pods-NordstromRack-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NordstromRack/Pods-NordstromRack-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		068D7FA024D4CD3800AB1549 /* Sources */ = {
@@ -360,6 +460,7 @@
 		};
 		068D7FC424D4CD3C00AB1549 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42BE8F18CFDB612DC004297D /* Pods-NordstromRack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +479,7 @@
 		};
 		068D7FC524D4CD3C00AB1549 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 153896C37B83E437FD7EA5E4 /* Pods-NordstromRack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -396,6 +498,7 @@
 		};
 		068D7FC724D4CD3C00AB1549 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3095C590015B38F08D933A17 /* Pods-NordstromRackTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -418,6 +521,7 @@
 		};
 		068D7FC824D4CD3C00AB1549 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E64F654C36E82DE06C6FCD02 /* Pods-NordstromRackTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
