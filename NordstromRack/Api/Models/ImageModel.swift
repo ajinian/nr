@@ -10,4 +10,8 @@ import Foundation
 
 struct ImageModel: Codable {
     var thumbnail: String
+    
+    var thumbnailUrl: URL {
+        URL(string: thumbnail)!
+    }
 }

@@ -10,4 +10,7 @@ import Foundation
 
 struct CatalogModel: Codable {
     var products: [ProductModel]
+    init() {
+        products = []
+    }
 }

@@ -25,6 +25,7 @@ class ApiRequestBuilder <S: SessionProtocol, A: ApiProtocol, C: Codable> {
         let request = URLRequest(url: api.resourceUrl)
         return Single<C>.create { single in
             let task = self.session.apiSession.dataTask(with: request) { (data, response, error) in
+                print(request.url?.absoluteString ?? "")
                 if let error = error {
                     single(.error(error))
                     return

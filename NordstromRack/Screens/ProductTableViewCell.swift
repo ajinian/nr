@@ -1,14 +1,11 @@
 //
-//  ViewModel.swift
+//  ProductTableViewCell.swift
 //  NordstromRack
 //
 //  Created by Arthur Jinian on 8/1/20.
 //  Copyright © 2020 AJ. All rights reserved.
 //
 
-import Foundation
-import RxSwift
+import UIKit
 
-class ViewModel {
-    let disposeBag = DisposeBag()
-}
+class ProductTableViewCell: UITableViewCell {}
