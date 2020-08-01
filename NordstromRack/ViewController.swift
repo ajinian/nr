@@ -8,11 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
+    
+    var apiRequest: ApiRequest<CatalogSession, CatalogApi, CatalogModel>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let session = CatalogSession()
+        let api = CatalogApi()
+        apiRequest = ApiRequest(session: session, api: api, modelType: CatalogModel.self)
+        apiRequest.get()
     }
 
 
