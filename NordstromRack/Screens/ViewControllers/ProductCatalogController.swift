@@ -10,10 +10,16 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol CatalogProvider {
+    var catalog: BehaviorRelay<CatalogModel> { get }
+}
+
 class ProductCatalogController: UIViewController {
     
+    typealias ViewModel = CatalogProvider & DisposeBagProvider & ErrorObservableProvider
+    
     @IBOutlet weak var tableView: UITableView!
-    let viewModel: ViewModel = ViewModel()
+    var viewModel: ViewModel?
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -21,13 +27,14 @@ class ProductCatalogController: UIViewController {
     }
     
     func bindViews() {
-        viewModel.catalog.map { catalog -> [ProductModel] in
+        if let viewModel = viewModel {
+            viewModel.catalog.map { catalog -> [ProductModel] in
                 catalog.products
-        }
-        .bind(to: tableView.rx.items(cellIdentifier: "productTableViewCell", cellType: ProductTableViewCell.self)) { (row, element, cell) in
+            }.bind(to: tableView.rx.items(cellIdentifier: "productTableViewCell", cellType: ProductTableViewCell.self)) { (row, element, cell) in
                 cell.textLabel?.text = element.name
                 cell.imageView?.load(url: element.images.thumbnailUrl, placeholder: nil)
-                
-        }.disposed(by: viewModel.disposeBag)
+                    
+            }.disposed(by: viewModel.disposeBag)
+        }
     }
 }
