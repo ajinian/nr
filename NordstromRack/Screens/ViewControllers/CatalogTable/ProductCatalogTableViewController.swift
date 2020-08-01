@@ -14,7 +14,7 @@ protocol CatalogProvider {
     var catalog: BehaviorRelay<CatalogModel> { get }
 }
 
-class ProductCatalogController: UIViewController {
+class ProductCatalogTableViewController: UIViewController {
     
     typealias ViewModel = CatalogProvider & DisposeBagProvider & ErrorObservableProvider
     
@@ -32,9 +32,15 @@ class ProductCatalogController: UIViewController {
                 catalog.products
             }.bind(to: tableView.rx.items(cellIdentifier: "productTableViewCell", cellType: ProductTableViewCell.self)) { (row, element, cell) in
                 cell.textLabel?.text = element.name
-                cell.imageView?.load(url: element.images.thumbnailUrl, placeholder: nil)
+                let placeholder = UIImage(named: "placeholder")
+                cell.imageView?.load(url: element.images.thumbnailUrl, placeholder: placeholder)
                     
             }.disposed(by: viewModel.disposeBag)
+            
+            tableView.rx.itemSelected
+                .subscribe(onNext: { indexPath in
+                    print("We have tapped a row")
+                }).disposed(by: viewModel.disposeBag)
         }
     }
 }

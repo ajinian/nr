@@ -23,7 +23,7 @@
         <!--Product Catalog-->
         <scene sceneID="AbL-aN-vEP">
             <objects>
-                <viewController storyboardIdentifier="productCatalogController" id="kGG-cg-StH" customClass="ProductCatalogController" customModule="NordstromRack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="productCatalogTableViewController" id="kGG-cg-StH" customClass="ProductCatalogTableViewController" customModule="NordstromRack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QM7-61-eyK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
