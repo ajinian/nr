@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,9 @@
 		068D7FB124D4CD3C00AB1549 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068D7FB024D4CD3C00AB1549 /* Assets.xcassets */; };
 		068D7FB424D4CD3C00AB1549 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 068D7FB224D4CD3C00AB1549 /* LaunchScreen.storyboard */; };
 		068D7FBF24D4CD3C00AB1549 /* NordstromRackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D7FBE24D4CD3C00AB1549 /* NordstromRackTests.swift */; };
+		068D7FCD24D5C01E00AB1549 /* CatalogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D7FCC24D5C01E00AB1549 /* CatalogModel.swift */; };
+		068D7FCF24D5C09E00AB1549 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D7FCE24D5C09E00AB1549 /* ProductModel.swift */; };
+		068D7FD124D5C10000AB1549 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D7FD024D5C10000AB1549 /* ImageModel.swift */; };
 		1AE32C703991E8D1496E9AD0 /* Pods_NordstromRackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAC2189669C0C4937559B71 /* Pods_NordstromRackTests.framework */; };
 		9B8AE6655022D77CF6E8E410 /* Pods_NordstromRack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C93757A63D11D94B70A78CAC /* Pods_NordstromRack.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +43,9 @@
 		068D7FBA24D4CD3C00AB1549 /* NordstromRackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NordstromRackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		068D7FBE24D4CD3C00AB1549 /* NordstromRackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NordstromRackTests.swift; sourceTree = "<group>"; };
 		068D7FC024D4CD3C00AB1549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		068D7FCC24D5C01E00AB1549 /* CatalogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogModel.swift; sourceTree = "<group>"; };
+		068D7FCE24D5C09E00AB1549 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		068D7FD024D5C10000AB1549 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		0BAC2189669C0C4937559B71 /* Pods_NordstromRackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NordstromRackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		153896C37B83E437FD7EA5E4 /* Pods-NordstromRack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NordstromRack.release.xcconfig"; path = "Target Support Files/Pods-NordstromRack/Pods-NordstromRack.release.xcconfig"; sourceTree = "<group>"; };
 		3095C590015B38F08D933A17 /* Pods-NordstromRackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NordstromRackTests.debug.xcconfig"; path = "Target Support Files/Pods-NordstromRackTests/Pods-NordstromRackTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +97,7 @@
 		068D7FA624D4CD3800AB1549 /* NordstromRack */ = {
 			isa = PBXGroup;
 			children = (
+				068D7FC924D5BFB700AB1549 /* Api */,
 				068D7FA724D4CD3900AB1549 /* AppDelegate.swift */,
 				068D7FA924D4CD3900AB1549 /* SceneDelegate.swift */,
 				068D7FAB24D4CD3900AB1549 /* ViewController.swift */,
@@ -111,6 +118,24 @@
 			path = NordstromRackTests;
 			sourceTree = "<group>";
 		};
+		068D7FC924D5BFB700AB1549 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				068D7FCB24D5BFEB00AB1549 /* Models */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		068D7FCB24D5BFEB00AB1549 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				068D7FCC24D5C01E00AB1549 /* CatalogModel.swift */,
+				068D7FCE24D5C09E00AB1549 /* ProductModel.swift */,
+				068D7FD024D5C10000AB1549 /* ImageModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1017A1A131B83AC481B46AF9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +144,6 @@
 				3095C590015B38F08D933A17 /* Pods-NordstromRackTests.debug.xcconfig */,
 				E64F654C36E82DE06C6FCD02 /* Pods-NordstromRackTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -301,8 +325,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				068D7FAC24D4CD3900AB1549 /* ViewController.swift in Sources */,
+				068D7FD124D5C10000AB1549 /* ImageModel.swift in Sources */,
+				068D7FCD24D5C01E00AB1549 /* CatalogModel.swift in Sources */,
 				068D7FA824D4CD3900AB1549 /* AppDelegate.swift in Sources */,
 				068D7FAA24D4CD3900AB1549 /* SceneDelegate.swift in Sources */,
+				068D7FCF24D5C09E00AB1549 /* ProductModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
