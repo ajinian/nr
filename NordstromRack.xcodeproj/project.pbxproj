@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		065CB42024D63026004F6E4A /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065CB41F24D63026004F6E4A /* ProductDetailViewController.swift */; };
 		065CB42524D65447004F6E4A /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065CB42424D65447004F6E4A /* ProductDetailViewModel.swift */; };
+		065CB42824D67448004F6E4A /* ProductCatalogCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065CB42724D67448004F6E4A /* ProductCatalogCollectionViewController.swift */; };
+		065CB42A24D68DC9004F6E4A /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065CB42924D68DC9004F6E4A /* ProductCollectionViewCell.swift */; };
 		068D7FA824D4CD3900AB1549 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D7FA724D4CD3900AB1549 /* AppDelegate.swift */; };
 		068D7FAA24D4CD3900AB1549 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D7FA924D4CD3900AB1549 /* SceneDelegate.swift */; };
 		068D7FAC24D4CD3900AB1549 /* ProductCatalogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D7FAB24D4CD3900AB1549 /* ProductCatalogTableViewController.swift */; };
@@ -45,6 +47,8 @@
 /* Begin PBXFileReference section */
 		065CB41F24D63026004F6E4A /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		065CB42424D65447004F6E4A /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
+		065CB42724D67448004F6E4A /* ProductCatalogCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCatalogCollectionViewController.swift; sourceTree = "<group>"; };
+		065CB42924D68DC9004F6E4A /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		068D7FA424D4CD3800AB1549 /* NordstromRack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NordstromRack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		068D7FA724D4CD3900AB1549 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		068D7FA924D4CD3900AB1549 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,14 +100,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		065CB41D24D62BD9004F6E4A /* CatalogTable */ = {
+		065CB41D24D62BD9004F6E4A /* Catalog */ = {
 			isa = PBXGroup;
 			children = (
 				068D7FAB24D4CD3900AB1549 /* ProductCatalogTableViewController.swift */,
+				065CB42724D67448004F6E4A /* ProductCatalogCollectionViewController.swift */,
 				068D7FE224D5F4C200AB1549 /* ProductTableViewCell.swift */,
+				065CB42924D68DC9004F6E4A /* ProductCollectionViewCell.swift */,
 				068D7FE724D6216200AB1549 /* ProductCatalogViewModel.swift */,
 			);
-			path = CatalogTable;
+			path = Catalog;
 			sourceTree = "<group>";
 		};
 		065CB41E24D63005004F6E4A /* ProductDetail */ = {
@@ -218,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				068D7FE924D6233700AB1549 /* ViewControllers */,
-				068D7FAD24D4CD3900AB1549 /* Main.storyboard */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -227,8 +232,9 @@
 			isa = PBXGroup;
 			children = (
 				065CB42324D65380004F6E4A /* Common */,
+				065CB41D24D62BD9004F6E4A /* Catalog */,
 				065CB41E24D63005004F6E4A /* ProductDetail */,
-				065CB41D24D62BD9004F6E4A /* CatalogTable */,
+				068D7FAD24D4CD3900AB1549 /* Main.storyboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -423,6 +429,7 @@
 			files = (
 				068D7FDD24D5CB5D00AB1549 /* SessionProtocol.swift in Sources */,
 				068D7FDB24D5CB3B00AB1549 /* CatalogApi.swift in Sources */,
+				065CB42824D67448004F6E4A /* ProductCatalogCollectionViewController.swift in Sources */,
 				068D7FAC24D4CD3900AB1549 /* ProductCatalogTableViewController.swift in Sources */,
 				068D7FD524D5C25B00AB1549 /* ApiRequestBuilder.swift in Sources */,
 				068D7FD124D5C10000AB1549 /* ImageModel.swift in Sources */,
@@ -438,6 +445,7 @@
 				065CB42024D63026004F6E4A /* ProductDetailViewController.swift in Sources */,
 				068D7FCF24D5C09E00AB1549 /* ProductModel.swift in Sources */,
 				068D7FE624D615ED00AB1549 /* Extensions.swift in Sources */,
+				065CB42A24D68DC9004F6E4A /* ProductCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

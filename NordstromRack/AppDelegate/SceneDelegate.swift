@@ -15,7 +15,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
         if let navigationController = window?.rootViewController as? UINavigationController {
-            if let productCatalogController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "productCatalogTableViewController") as? ProductCatalogTableViewController {
+//            if let productCatalogController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "productCatalogTableViewController") as? ProductCatalogTableViewController {
+//                productCatalogController.viewModel = ProductCatalogViewModel()
+//                navigationController.viewControllers = [productCatalogController]
+//            }
+            
+            if let productCatalogController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "productCatalogCollectionViewController") as? ProductCatalogCollectionViewController {
                 productCatalogController.viewModel = ProductCatalogViewModel()
                 navigationController.viewControllers = [productCatalogController]
             }
