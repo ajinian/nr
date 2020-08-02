@@ -18,6 +18,8 @@ class ProductCatalogCollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.delegate = self
+        let listButton = UIBarButtonItem(image: UIImage(named: "list"), style: .plain, target: self, action: #selector(showList))
+        self.navigationItem.rightBarButtonItem = listButton
         bindViews()
     }
     
@@ -37,6 +39,13 @@ class ProductCatalogCollectionViewController: UIViewController {
                     self.navigationController?.pushViewController(detailController, animated: true)
                 }
             }).disposed(by: viewModel.disposeBag)
+        }
+    }
+    
+    @objc func showList() {
+        if let productCatalogController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "productCatalogTableViewController") as? ProductCatalogTableViewController, let navController = self.navigationController {
+            productCatalogController.viewModel = viewModel
+            navController.viewControllers = [productCatalogController]
         }
     }
 }

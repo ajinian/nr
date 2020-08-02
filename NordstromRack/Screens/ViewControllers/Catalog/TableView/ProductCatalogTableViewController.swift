@@ -23,6 +23,8 @@ class ProductCatalogTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let gridButton = UIBarButtonItem(image: UIImage(named: "grid"), style: .plain, target: self, action: #selector(showGrid))
+        self.navigationItem.rightBarButtonItem = gridButton
         bindViews()
     }
     
@@ -45,6 +47,13 @@ class ProductCatalogTableViewController: UIViewController {
                         self.navigationController?.pushViewController(detailController, animated: true)
                     }
                 }).disposed(by: viewModel.disposeBag)
+        }
+    }
+    
+    @objc func showGrid() {
+        if let productCatalogController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "productCatalogCollectionViewController") as? ProductCatalogCollectionViewController, let navController = self.navigationController {
+            productCatalogController.viewModel = viewModel
+            navController.viewControllers = [productCatalogController]
         }
     }
 }
