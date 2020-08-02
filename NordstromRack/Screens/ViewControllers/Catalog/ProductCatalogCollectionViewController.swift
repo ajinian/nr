@@ -29,6 +29,14 @@ class ProductCatalogCollectionViewController: UIViewController {
                 cell.imageView.load(url: element.images.thumbnailUrl, placeholder: UIImage(named: "placeholder"))
                 cell.titleLabel.text = element.name
             }.disposed(by: viewModel.disposeBag)
+            
+            collectionView.rx.itemSelected
+            .subscribe(onNext: { indexPath in
+                if let detailController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "productDetailViewController") as? ProductDetailViewController {
+                    detailController.viewModel = ProductDetailViewModel(index: indexPath.row, catalog: viewModel.catalog)
+                    self.navigationController?.pushViewController(detailController, animated: true)
+                }
+            }).disposed(by: viewModel.disposeBag)
         }
     }
 }
