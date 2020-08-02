@@ -8,8 +8,8 @@
 
 import Foundation
 
-class CatalogApi: ApiProtocol {
-    var resourceUrl: URL {
-        return URL(string: "https://www.hautelookcdn.com/mobile-apps/Interview/catalog.json")!
+class CatalogApi: BaseApi {
+    override var resourceUrl: URL {
+        return URL(string: "\(self.baseUrl)/catalog.json")!
     }
 }

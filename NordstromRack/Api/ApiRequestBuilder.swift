@@ -9,21 +9,21 @@
 import Foundation
 import RxSwift
 
-class ApiRequestBuilder <S: SessionProtocol, A: ApiProtocol, C: Codable> {
+class ApiRequestBuilder <Session: SessionProtocol, Api: ApiProtocol, Model: Codable> {
     
-    private let session: S
-    private let api: A
-    private let modelType: C.Type
+    private let session: Session
+    private let api: Api
+    private let modelType: Model.Type
     
-    init(session: S, api: A, modelType: C.Type) {
+    init(session: Session, api: Api, modelType: Model.Type) {
         self.session = session
         self.api = api
         self.modelType = modelType
     }
     
-    func build() -> Single<C> {
+    func build() -> Single<Model> {
         let request = URLRequest(url: api.resourceUrl)
-        return Single<C>.create { single in
+        return Single<Model>.create { single in
             let task = self.session.apiSession.dataTask(with: request) { (data, response, error) in
                 print(request.url?.absoluteString ?? "")
                 if let error = error {

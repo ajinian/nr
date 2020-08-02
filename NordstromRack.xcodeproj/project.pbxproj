@@ -11,6 +11,7 @@
 		065CB42524D65447004F6E4A /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065CB42424D65447004F6E4A /* ProductDetailViewModel.swift */; };
 		065CB42824D67448004F6E4A /* ProductCatalogCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065CB42724D67448004F6E4A /* ProductCatalogCollectionViewController.swift */; };
 		065CB42A24D68DC9004F6E4A /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065CB42924D68DC9004F6E4A /* ProductCollectionViewCell.swift */; };
+		065CB43024D71B22004F6E4A /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065CB42F24D71B22004F6E4A /* BaseApi.swift */; };
 		068D7FA824D4CD3900AB1549 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D7FA724D4CD3900AB1549 /* AppDelegate.swift */; };
 		068D7FAA24D4CD3900AB1549 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D7FA924D4CD3900AB1549 /* SceneDelegate.swift */; };
 		068D7FAC24D4CD3900AB1549 /* ProductCatalogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D7FAB24D4CD3900AB1549 /* ProductCatalogTableViewController.swift */; };
@@ -49,6 +50,7 @@
 		065CB42424D65447004F6E4A /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
 		065CB42724D67448004F6E4A /* ProductCatalogCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCatalogCollectionViewController.swift; sourceTree = "<group>"; };
 		065CB42924D68DC9004F6E4A /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		065CB42F24D71B22004F6E4A /* BaseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
 		068D7FA424D4CD3800AB1549 /* NordstromRack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NordstromRack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		068D7FA724D4CD3900AB1549 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		068D7FA924D4CD3900AB1549 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				068D7FD824D5C3C500AB1549 /* ApiProtocol.swift */,
+				065CB42F24D71B22004F6E4A /* BaseApi.swift */,
 				068D7FDA24D5CB3B00AB1549 /* CatalogApi.swift */,
 			);
 			path = Apis;
@@ -456,6 +459,7 @@
 				068D7FE824D6216200AB1549 /* ProductCatalogViewModel.swift in Sources */,
 				068D7FA824D4CD3900AB1549 /* AppDelegate.swift in Sources */,
 				068D7FAA24D4CD3900AB1549 /* SceneDelegate.swift in Sources */,
+				065CB43024D71B22004F6E4A /* BaseApi.swift in Sources */,
 				068D7FD324D5C18400AB1549 /* CatalogSession.swift in Sources */,
 				068D7FE124D5DF7200AB1549 /* ViewModel.swift in Sources */,
 				065CB42024D63026004F6E4A /* ProductDetailViewController.swift in Sources */,
