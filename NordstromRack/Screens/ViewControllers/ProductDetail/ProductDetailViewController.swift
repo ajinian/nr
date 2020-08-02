@@ -11,12 +11,12 @@ import RxSwift
 import RxCocoa
 
 protocol ProductProvider {
-    func productAt(index: Int) -> Observable<ProductModel>
+    var product: Observable<ProductModel> { get }
 }
 
 class ProductDetailViewController: UIViewController {
 
-    typealias VM = DisposeBagProvider & ErrorObservableProvider
+    typealias VM = ProductProvider & DisposeBagProvider & ErrorObservableProvider
     
     @IBOutlet weak var imageView: UIImageView!
     var viewModel: VM?
@@ -24,7 +24,9 @@ class ProductDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let viewModel = viewModel {
-            
+            viewModel.product.subscribe(onNext: { product in
+                self.imageView.load(url: product.images.thumbnailUrl, placeholder: UIImage(named: "placeholder"))
+            }).disposed(by: viewModel.disposeBag)
         }
     }
 }

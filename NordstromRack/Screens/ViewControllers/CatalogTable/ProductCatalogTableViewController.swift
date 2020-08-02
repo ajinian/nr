@@ -41,6 +41,7 @@ class ProductCatalogTableViewController: UIViewController {
             tableView.rx.itemSelected
                 .subscribe(onNext: { indexPath in
                     if let detailController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "productDetailViewController") as? ProductDetailViewController {
+                        detailController.viewModel = ProductDetailViewModel(index: indexPath.row, catalog: viewModel.catalog)
                         self.navigationController?.pushViewController(detailController, animated: true)
                     }
                 }).disposed(by: viewModel.disposeBag)
