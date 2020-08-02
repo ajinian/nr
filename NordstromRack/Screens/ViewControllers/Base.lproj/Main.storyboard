@@ -170,8 +170,8 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="122" height="126"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mL1-AJ-wto">
-                                                            <rect key="frame" x="8" y="8" width="106" height="25.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                            <rect key="frame" x="8" y="8" width="106" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
