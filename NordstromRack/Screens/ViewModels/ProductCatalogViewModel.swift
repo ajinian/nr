@@ -11,7 +11,6 @@ import RxSwift
 import RxCocoa
 
 class ProductCatalogViewModel: ViewModel, CatalogProvider {
-    
     var apiRequestBuilder: ApiRequestBuilder<CatalogSession, CatalogApi, CatalogModel>
     var catalog = BehaviorRelay(value: CatalogModel())
     

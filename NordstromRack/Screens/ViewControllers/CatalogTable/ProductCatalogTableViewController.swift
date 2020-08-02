@@ -21,8 +21,8 @@ class ProductCatalogTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var viewModel: ViewModel?
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         bindViews()
     }
     
@@ -30,7 +30,8 @@ class ProductCatalogTableViewController: UIViewController {
         if let viewModel = viewModel {
             viewModel.catalog.map { catalog -> [ProductModel] in
                 catalog.products
-            }.bind(to: tableView.rx.items(cellIdentifier: "productTableViewCell", cellType: ProductTableViewCell.self)) { (row, element, cell) in
+            }
+            .bind(to: tableView.rx.items(cellIdentifier: "productTableViewCell", cellType: ProductTableViewCell.self)) { (row, element, cell) in
                 cell.textLabel?.text = element.name
                 let placeholder = UIImage(named: "placeholder")
                 cell.imageView?.load(url: element.images.thumbnailUrl, placeholder: placeholder)
@@ -39,7 +40,9 @@ class ProductCatalogTableViewController: UIViewController {
             
             tableView.rx.itemSelected
                 .subscribe(onNext: { indexPath in
-                    print("We have tapped a row")
+                    if let detailController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "productDetailViewController") as? ProductDetailViewController {
+                        self.navigationController?.pushViewController(detailController, animated: true)
+                    }
                 }).disposed(by: viewModel.disposeBag)
         }
     }

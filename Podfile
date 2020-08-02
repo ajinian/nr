@@ -6,8 +6,8 @@ target 'NordstromRack' do
   use_frameworks!
 
   # Pods for NordstromRack
-  pod 'RxSwift', '~> 5'
-  pod 'RxCocoa', '~> 5'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
   target 'NordstromRackTests' do
     inherit! :search_paths
