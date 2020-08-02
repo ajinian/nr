@@ -78,11 +78,29 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gv1-oX-XFh">
                                                 <rect key="frame" x="16" y="16" width="382" height="786"/>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwK-bA-Pe8">
+                                                <rect key="frame" x="16" y="16" width="382" height="44.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r80-cf-ydJ">
+                                                <rect key="frame" x="16" y="76.5" width="382" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
+                                            <constraint firstItem="cwK-bA-Pe8" firstAttribute="top" secondItem="flM-us-l7r" secondAttribute="top" constant="16" id="4Gs-Uu-ehV"/>
+                                            <constraint firstItem="cwK-bA-Pe8" firstAttribute="leading" secondItem="flM-us-l7r" secondAttribute="leading" constant="16" id="DAe-xk-1dN"/>
                                             <constraint firstItem="Gv1-oX-XFh" firstAttribute="top" secondItem="flM-us-l7r" secondAttribute="top" constant="16" id="EIo-X5-QWn"/>
+                                            <constraint firstAttribute="trailing" secondItem="cwK-bA-Pe8" secondAttribute="trailing" constant="16" id="I5S-3M-cRJ"/>
+                                            <constraint firstItem="r80-cf-ydJ" firstAttribute="leading" secondItem="flM-us-l7r" secondAttribute="leading" constant="16" id="URv-ds-w5W"/>
                                             <constraint firstAttribute="bottom" secondItem="Gv1-oX-XFh" secondAttribute="bottom" constant="16" id="YsF-Oi-TNf"/>
+                                            <constraint firstAttribute="trailing" secondItem="r80-cf-ydJ" secondAttribute="trailing" constant="16" id="Znu-P4-aAI"/>
+                                            <constraint firstItem="r80-cf-ydJ" firstAttribute="top" secondItem="cwK-bA-Pe8" secondAttribute="bottom" constant="16" id="eMZ-yB-v7h"/>
                                             <constraint firstAttribute="trailing" secondItem="Gv1-oX-XFh" secondAttribute="trailing" constant="16" id="fDj-U7-UCD"/>
                                             <constraint firstItem="Gv1-oX-XFh" firstAttribute="leading" secondItem="flM-us-l7r" secondAttribute="leading" constant="16" id="zrp-Hw-pan"/>
                                         </constraints>
@@ -110,7 +128,9 @@
                         <viewLayoutGuide key="safeArea" id="MFr-dv-MqF"/>
                     </view>
                     <connections>
+                        <outlet property="detailsLabel" destination="r80-cf-ydJ" id="qRP-06-QZD"/>
                         <outlet property="imageView" destination="Gv1-oX-XFh" id="F5e-DS-dAU"/>
+                        <outlet property="nameLabel" destination="cwK-bA-Pe8" id="esj-Ky-h6f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZI3-NA-5tf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
