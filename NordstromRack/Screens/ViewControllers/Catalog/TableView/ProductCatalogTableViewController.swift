@@ -14,7 +14,7 @@ protocol CatalogProvider {
     var catalog: BehaviorRelay<CatalogModel> { get }
 }
 
-class ProductCatalogTableViewController: UIViewController {
+class ProductCatalogTableViewController: UIViewController, ProductDetailRoute, CatalogGridRoute {
     
     typealias ViewModel = CatalogProvider & DisposeBagProvider & ErrorObservableProvider
     
@@ -23,7 +23,7 @@ class ProductCatalogTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let gridButton = UIBarButtonItem(image: UIImage(named: "grid"), style: .plain, target: self, action: #selector(showGrid))
+        let gridButton = UIBarButtonItem(image: UIImage(named: "grid"), style: .plain, target: self, action: #selector(handleGridButtonTap))
         self.navigationItem.rightBarButtonItem = gridButton
         bindViews()
     }
@@ -41,19 +41,15 @@ class ProductCatalogTableViewController: UIViewController {
             }.disposed(by: viewModel.disposeBag)
             
             tableView.rx.itemSelected
-                .subscribe(onNext: { indexPath in
-                    if let detailController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "productDetailViewController") as? ProductDetailViewController {
-                        detailController.viewModel = ProductDetailViewModel(index: indexPath.row, catalog: viewModel.catalog)
-                        self.navigationController?.pushViewController(detailController, animated: true)
-                    }
+                .subscribe(onNext: { [weak self] indexPath in
+                    self?.showProductDetail(index: indexPath.row, catalog: viewModel.catalog)
                 }).disposed(by: viewModel.disposeBag)
         }
     }
     
-    @objc func showGrid() {
-        if let productCatalogController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "productCatalogCollectionViewController") as? ProductCatalogCollectionViewController, let navController = self.navigationController {
-            productCatalogController.viewModel = viewModel
-            navController.viewControllers = [productCatalogController]
+    @objc func handleGridButtonTap() {
+        if let viewModel = viewModel {
+            showGrid(viewModel: viewModel)
         }
     }
 }

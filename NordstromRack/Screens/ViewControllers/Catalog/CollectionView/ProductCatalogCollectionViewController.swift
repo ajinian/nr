@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProductCatalogCollectionViewController: UIViewController {
+class ProductCatalogCollectionViewController: UIViewController, CatalogTableRoute, ProductDetailRoute {
     
     typealias ViewModel = CatalogProvider & DisposeBagProvider & ErrorObservableProvider
     
@@ -33,19 +33,15 @@ class ProductCatalogCollectionViewController: UIViewController {
             }.disposed(by: viewModel.disposeBag)
             
             collectionView.rx.itemSelected
-            .subscribe(onNext: { indexPath in
-                if let detailController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "productDetailViewController") as? ProductDetailViewController {
-                    detailController.viewModel = ProductDetailViewModel(index: indexPath.row, catalog: viewModel.catalog)
-                    self.navigationController?.pushViewController(detailController, animated: true)
-                }
+            .subscribe(onNext: { [weak self] indexPath in
+                self?.showProductDetail(index: indexPath.row, catalog: viewModel.catalog)
             }).disposed(by: viewModel.disposeBag)
         }
     }
     
     @objc func showList() {
-        if let productCatalogController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "productCatalogTableViewController") as? ProductCatalogTableViewController, let navController = self.navigationController {
-            productCatalogController.viewModel = viewModel
-            navController.viewControllers = [productCatalogController]
+        if let viewModel = viewModel {
+            showTable(viewModel: viewModel)
         }
     }
 }
