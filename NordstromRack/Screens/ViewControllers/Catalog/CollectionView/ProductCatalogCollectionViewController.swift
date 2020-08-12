@@ -34,7 +34,7 @@ class ProductCatalogCollectionViewController: UIViewController, CatalogTableRout
             
             collectionView.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
-                self?.showProductDetail(index: indexPath.row, catalog: viewModel.catalog)
+                self?.showProductDetail(viewModel: ProductDetailViewModel(index: indexPath.row, catalog: viewModel.catalog))
             }).disposed(by: viewModel.disposeBag)
         }
     }
