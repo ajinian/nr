@@ -11,15 +11,12 @@ import RxSwift
 import RxCocoa
 
 class ProductCatalogViewModel: ViewModel, CatalogProvider {
-    var apiRequestBuilder: ApiRequestBuilder<CatalogSession, CatalogApi, CatalogModel>
+    
     var catalog = BehaviorRelay(value: CatalogModel())
     
-    override init() {
-        let session = CatalogSession()
-        let api = CatalogApi()
-        apiRequestBuilder = ApiRequestBuilder(session: session, api: api, modelType: CatalogModel.self)
+    init(di: CatalogDependencies) {
         super.init()
-        apiRequestBuilder
+        di.request
             .build()
             .asDriver(onErrorJustReturn: CatalogModel())
             .drive(catalog)

@@ -13,6 +13,9 @@
 		065CB42A24D68DC9004F6E4A /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065CB42924D68DC9004F6E4A /* ProductCollectionViewCell.swift */; };
 		065CB43024D71B22004F6E4A /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065CB42F24D71B22004F6E4A /* BaseApi.swift */; };
 		065CB43224D88B33004F6E4A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065CB43124D88B33004F6E4A /* Router.swift */; };
+		065CB43424E7155E004F6E4A /* Di.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065CB43324E7155E004F6E4A /* Di.swift */; };
+		065CB43624E8700B004F6E4A /* CatalogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065CB43524E8700B004F6E4A /* CatalogController.swift */; };
+		065CB43824E87682004F6E4A /* CatalogDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065CB43724E87682004F6E4A /* CatalogDi.swift */; };
 		068D7FA824D4CD3900AB1549 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D7FA724D4CD3900AB1549 /* AppDelegate.swift */; };
 		068D7FAA24D4CD3900AB1549 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D7FA924D4CD3900AB1549 /* SceneDelegate.swift */; };
 		068D7FAC24D4CD3900AB1549 /* ProductCatalogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D7FAB24D4CD3900AB1549 /* ProductCatalogTableViewController.swift */; };
@@ -53,6 +56,9 @@
 		065CB42924D68DC9004F6E4A /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		065CB42F24D71B22004F6E4A /* BaseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
 		065CB43124D88B33004F6E4A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		065CB43324E7155E004F6E4A /* Di.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Di.swift; sourceTree = "<group>"; };
+		065CB43524E8700B004F6E4A /* CatalogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogController.swift; sourceTree = "<group>"; };
+		065CB43724E87682004F6E4A /* CatalogDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDi.swift; sourceTree = "<group>"; };
 		068D7FA424D4CD3800AB1549 /* NordstromRack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NordstromRack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		068D7FA724D4CD3900AB1549 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		068D7FA924D4CD3900AB1549 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +116,8 @@
 				065CB42C24D6A8A6004F6E4A /* CollectionView */,
 				065CB42B24D6A893004F6E4A /* TableView */,
 				068D7FE724D6216200AB1549 /* ProductCatalogViewModel.swift */,
+				065CB43524E8700B004F6E4A /* CatalogController.swift */,
+				065CB43724E87682004F6E4A /* CatalogDi.swift */,
 			);
 			path = Catalog;
 			sourceTree = "<group>";
@@ -129,6 +137,7 @@
 				068D7FE524D615ED00AB1549 /* Extensions.swift */,
 				068D7FE024D5DF7200AB1549 /* ViewModel.swift */,
 				065CB43124D88B33004F6E4A /* Router.swift */,
+				065CB43324E7155E004F6E4A /* Di.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -458,9 +467,12 @@
 				065CB42524D65447004F6E4A /* ProductDetailViewModel.swift in Sources */,
 				068D7FCD24D5C01E00AB1549 /* CatalogModel.swift in Sources */,
 				068D7FD924D5C3C500AB1549 /* ApiProtocol.swift in Sources */,
+				065CB43624E8700B004F6E4A /* CatalogController.swift in Sources */,
+				065CB43824E87682004F6E4A /* CatalogDi.swift in Sources */,
 				068D7FE324D5F4C200AB1549 /* ProductTableViewCell.swift in Sources */,
 				065CB43224D88B33004F6E4A /* Router.swift in Sources */,
 				068D7FE824D6216200AB1549 /* ProductCatalogViewModel.swift in Sources */,
+				065CB43424E7155E004F6E4A /* Di.swift in Sources */,
 				068D7FA824D4CD3900AB1549 /* AppDelegate.swift in Sources */,
 				068D7FAA24D4CD3900AB1549 /* SceneDelegate.swift in Sources */,
 				065CB43024D71B22004F6E4A /* BaseApi.swift in Sources */,

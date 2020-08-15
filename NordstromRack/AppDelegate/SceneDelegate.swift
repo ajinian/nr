@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         if let navigationController = window?.rootViewController as? UINavigationController {
             if let productCatalogController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "productCatalogCollectionViewController") as? ProductCatalogCollectionViewController {
-                productCatalogController.viewModel = ProductCatalogViewModel()
+                productCatalogController.viewModel = ProductCatalogViewModel(di: CatalogDi())
                 navigationController.viewControllers = [productCatalogController]
             }
         }

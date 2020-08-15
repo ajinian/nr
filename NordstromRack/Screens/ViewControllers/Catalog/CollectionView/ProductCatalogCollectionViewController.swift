@@ -8,12 +8,9 @@
 
 import UIKit
 
-class ProductCatalogCollectionViewController: UIViewController, CatalogTableRoute, ProductDetailRoute {
-    
-    typealias ViewModel = CatalogProvider & DisposeBagProvider & ErrorObservableProvider
+class ProductCatalogCollectionViewController: CatalogController, CatalogTableRoute, ProductDetailRoute {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var viewModel: ViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()

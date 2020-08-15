@@ -10,16 +10,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-protocol CatalogProvider {
-    var catalog: BehaviorRelay<CatalogModel> { get }
-}
-
-class ProductCatalogTableViewController: UIViewController, ProductDetailRoute, CatalogGridRoute {
-    
-    typealias ViewModel = CatalogProvider & DisposeBagProvider & ErrorObservableProvider
+class ProductCatalogTableViewController: CatalogController, ProductDetailRoute, CatalogGridRoute {
     
     @IBOutlet weak var tableView: UITableView!
-    var viewModel: ViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
