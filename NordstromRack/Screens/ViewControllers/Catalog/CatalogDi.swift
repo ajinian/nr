@@ -8,45 +8,17 @@
 
 import Foundation
 
-protocol CatalogSessionProvider {
-    var session: CatalogSession { get }
-}
-
-protocol CatalogApiProvider {
-    var api: CatalogApi { get }
-}
-
-protocol CatalogApiRequestProvider {
-    var request: ApiRequestBuilder<CatalogSession, CatalogApi, CatalogModel> { get }
-}
-
-typealias CatalogDependencies = CatalogApiProvider & CatalogSessionProvider & CatalogApiRequestProvider
-
-class CatalogDi: Di, CatalogDependencies {
+class CatalogDi: DiContainer {
+    
+    var session: CatalogSession {
+        resolve(type: CatalogSession.self)
+    }
     
     var api: CatalogApi {
-        resolve(type: CatalogApi.self)!
-    }
-    var session: CatalogSession {
-        resolve(type: CatalogSession.self)!
-    }
-    var request: ApiRequestBuilder<CatalogSession, CatalogApi, CatalogModel> {
-        resolve(type: ApiRequestBuilder<CatalogSession, CatalogApi, CatalogModel>.self)!
+        resolve(type: CatalogApi.self)
     }
     
-    override init() {
-        super.init()
-        register(type: CatalogSession.self) { _ in
-            CatalogSession()
-        }
-        register(type: CatalogApi.self) { _ in
-            CatalogApi()
-        }
-        register(type: ApiRequestBuilder<CatalogSession, CatalogApi, CatalogModel>.self) { di -> ApiRequestBuilder<CatalogSession, CatalogApi, CatalogModel> in
-            ApiRequestBuilder(
-                session: di.resolve(type: CatalogSession.self)!,
-                api: di.resolve(type: CatalogApi.self)!,
-                modelType: CatalogModel.self)
-        }
+    var request: ApiRequestBuilder<CatalogSession, CatalogApi, CatalogModel> {
+        ApiRequestBuilder(session: session, api: api, modelType: CatalogModel.self)
     }
 }

@@ -8,7 +8,13 @@
 
 import Foundation
 
-class CatalogApi: BaseApi {
+class CatalogApi: BaseApi, DiService {
+    
+    typealias Service = CatalogApi
+    static func service(container: DiContainer) -> CatalogApi {
+        CatalogApi()
+    }
+    
     override var resourceUrl: URL {
         return URL(string: "\(self.baseUrl)/catalog.json")!
     }

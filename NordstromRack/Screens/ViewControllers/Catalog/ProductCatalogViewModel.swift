@@ -14,9 +14,9 @@ class ProductCatalogViewModel: ViewModel, CatalogProvider {
     
     var catalog = BehaviorRelay(value: CatalogModel())
     
-    init(di: CatalogDependencies) {
+    init(dic: CatalogDi) {
         super.init()
-        di.request
+        dic.request
             .build()
             .asDriver(onErrorJustReturn: CatalogModel())
             .drive(catalog)

@@ -8,7 +8,12 @@
 
 import Foundation
 
-class CatalogSession: SessionProtocol {
+class CatalogSession: SessionProtocol, DiService {
+    
+    typealias Service = CatalogSession
+    static func service(container: DiContainer) -> CatalogSession {
+        CatalogSession()
+    }
     
     var apiSession: URLSession
     
