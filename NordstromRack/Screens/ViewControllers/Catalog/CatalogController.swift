@@ -12,6 +12,7 @@ import RxCocoa
 
 protocol CatalogProvider {
     var catalog: BehaviorRelay<CatalogModel> { get }
+    var request: Single<CatalogModel> { get }
 }
 
 class CatalogController: UIViewController {

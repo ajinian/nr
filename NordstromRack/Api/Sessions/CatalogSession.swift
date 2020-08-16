@@ -18,7 +18,7 @@ class CatalogSession: SessionProtocol, DiService {
     var apiSession: URLSession
     
     init() {
-        let config: URLSessionConfiguration = .ephemeral
+        let config: URLSessionConfiguration = .default
         config.httpAdditionalHeaders = [
             "Accept" : "application/json",
             "Content-Type" : "application/json"

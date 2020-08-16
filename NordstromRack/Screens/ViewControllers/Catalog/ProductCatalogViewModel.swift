@@ -13,11 +13,12 @@ import RxCocoa
 class ProductCatalogViewModel: ViewModel, CatalogProvider {
     
     var catalog = BehaviorRelay(value: CatalogModel())
+    var request: Single<CatalogModel>
     
-    init(dic: CatalogDi) {
+    init(di: CatalogDi) {
+        request = di.request.build()
         super.init()
-        dic.request
-            .build()
+        request
             .asDriver(onErrorJustReturn: CatalogModel())
             .drive(catalog)
             .disposed(by: disposeBag)
