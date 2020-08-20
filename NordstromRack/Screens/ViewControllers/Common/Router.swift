@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import RxCocoa
 
 protocol ProductDetailRoute {
     typealias ViewModel = ProductProvider & DisposeBagProvider & ErrorObservableProvider

@@ -8,8 +8,10 @@
 
 import Foundation
 
+typealias FactoryClosure = (DiContainer) -> AnyObject
 protocol DiService {
     associatedtype Service
+    static var factory: FactoryClosure { get }
     static func service(container: DiContainer) -> Service
 }
 
@@ -22,3 +24,5 @@ extension DiContainer {
         type.service(container: self)
     }
 }
+
+class Di: DiContainer {}

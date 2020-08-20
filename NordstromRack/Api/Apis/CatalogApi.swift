@@ -10,7 +10,10 @@ import Foundation
 
 class CatalogApi: BaseApi, DiService {
     
-    typealias Service = CatalogApi
+    static var factory: FactoryClosure = { di in
+        CatalogApi()
+    }
+    
     static func service(container: DiContainer) -> CatalogApi {
         CatalogApi()
     }

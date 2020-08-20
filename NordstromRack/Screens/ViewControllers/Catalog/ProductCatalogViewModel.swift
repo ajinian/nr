@@ -16,7 +16,7 @@ class ProductCatalogViewModel: ViewModel, CatalogProvider {
     var request: Single<CatalogModel>
     
     init(di: CatalogDi) {
-        request = di.request.build()
+        request = di.request
         super.init()
         request
             .asDriver(onErrorJustReturn: CatalogModel())

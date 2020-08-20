@@ -10,7 +10,10 @@ import Foundation
 
 class CatalogSession: SessionProtocol, DiService {
     
-    typealias Service = CatalogSession
+    static var factory: FactoryClosure = { di in
+        CatalogSession()
+    }
+    
     static func service(container: DiContainer) -> CatalogSession {
         CatalogSession()
     }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class CatalogDi: DiContainer {
     
@@ -18,7 +19,7 @@ class CatalogDi: DiContainer {
         resolve(type: CatalogApi.self)
     }
     
-    var request: ApiRequestBuilder<CatalogSession, CatalogApi, CatalogModel> {
-        ApiRequestBuilder(session: session, api: api, modelType: CatalogModel.self)
+    var request: Single<CatalogModel> {
+        ApiRequestBuilder(session: session, api: api, modelType: CatalogModel.self).build()
     }
 }

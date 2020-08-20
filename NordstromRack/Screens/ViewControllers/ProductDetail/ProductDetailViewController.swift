@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import RxCocoa
 
 protocol ProductProvider {
     var product: Observable<ProductModel> { get }
