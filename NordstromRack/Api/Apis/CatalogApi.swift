@@ -14,10 +14,6 @@ class CatalogApi: BaseApi, DiService {
         CatalogApi()
     }
     
-    static func service(container: DiContainer) -> CatalogApi {
-        CatalogApi()
-    }
-    
     override var resourceUrl: URL {
         return URL(string: "\(self.baseUrl)/catalog.json")!
     }

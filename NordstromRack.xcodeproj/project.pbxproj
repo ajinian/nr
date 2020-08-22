@@ -117,7 +117,6 @@
 				065CB42B24D6A893004F6E4A /* TableView */,
 				068D7FE724D6216200AB1549 /* ProductCatalogViewModel.swift */,
 				065CB43524E8700B004F6E4A /* CatalogController.swift */,
-				065CB43724E87682004F6E4A /* CatalogDi.swift */,
 			);
 			path = Catalog;
 			sourceTree = "<group>";
@@ -134,10 +133,10 @@
 		065CB42324D65380004F6E4A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0661C58424F09948007BF845 /* Di */,
 				068D7FE524D615ED00AB1549 /* Extensions.swift */,
 				068D7FE024D5DF7200AB1549 /* ViewModel.swift */,
 				065CB43124D88B33004F6E4A /* Router.swift */,
-				065CB43324E7155E004F6E4A /* Di.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -158,6 +157,15 @@
 				065CB42724D67448004F6E4A /* ProductCatalogCollectionViewController.swift */,
 			);
 			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		0661C58424F09948007BF845 /* Di */ = {
+			isa = PBXGroup;
+			children = (
+				065CB43324E7155E004F6E4A /* Di.swift */,
+				065CB43724E87682004F6E4A /* CatalogDi.swift */,
+			);
+			path = Di;
 			sourceTree = "<group>";
 		};
 		068D7F9B24D4CD3800AB1549 = {

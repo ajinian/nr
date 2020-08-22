@@ -15,7 +15,7 @@ class ProductCatalogViewModel: ViewModel, CatalogProvider {
     var catalog = BehaviorRelay(value: CatalogModel())
     var request: Single<CatalogModel>
     
-    init(di: CatalogDi) {
+    init(di: CatalogRequesting) {
         request = di.request
         super.init()
         request

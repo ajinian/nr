@@ -7,22 +7,25 @@
 //
 
 import Foundation
+import RxSwift
 
 typealias FactoryClosure = (DiContainer) -> AnyObject
 protocol DiService {
-    associatedtype Service
     static var factory: FactoryClosure { get }
-    static func service(container: DiContainer) -> Service
 }
 
 protocol DiContainer {
-    func resolve<Service>(type: Service.Type) -> Service.Service where Service: DiService
+    func resolve<Service>(type: Service.Type) -> Service where Service: DiService
 }
 
 extension DiContainer {
-    func resolve<Service>(type: Service.Type) -> Service.Service where Service: DiService {
-        type.service(container: self)
+    func resolve<Service>(type: Service.Type) -> Service where Service: DiService {
+        type.factory(self) as! Service
     }
+}
+
+protocol CatalogRequesting {
+    var request: Single<CatalogModel> { get }
 }
 
 class Di: DiContainer {}

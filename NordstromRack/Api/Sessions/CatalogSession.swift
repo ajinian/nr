@@ -14,10 +14,6 @@ class CatalogSession: SessionProtocol, DiService {
         CatalogSession()
     }
     
-    static func service(container: DiContainer) -> CatalogSession {
-        CatalogSession()
-    }
-    
     var apiSession: URLSession
     
     init() {
