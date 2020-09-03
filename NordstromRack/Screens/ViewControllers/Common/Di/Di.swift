@@ -24,8 +24,4 @@ extension DiContainer {
     }
 }
 
-protocol CatalogRequesting {
-    var request: Single<CatalogModel> { get }
-}
-
 class Di: DiContainer {}

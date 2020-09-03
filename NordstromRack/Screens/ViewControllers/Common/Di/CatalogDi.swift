@@ -9,6 +9,10 @@
 import Foundation
 import RxSwift
 
+protocol CatalogRequesting {
+    var request: Single<CatalogModel> { get }
+}
+
 extension Di: CatalogRequesting {
     var request: Single<CatalogModel> {
         let session = resolve(type: CatalogSession.self)
