@@ -9,18 +9,20 @@
 import UIKit
 import RxSwift
 
+typealias VM = DisposeBagProvider & ErrorObservableProvider
+
 protocol ProductDetailRoute {
-    typealias ViewModel = ProductProvider & DisposeBagProvider & ErrorObservableProvider
+    typealias ViewModel = VM & ProductProvider
     func showProductDetail(viewModel: ViewModel)
 }
 
 protocol CatalogGridRoute {
-    typealias ViewModel = CatalogProvider & DisposeBagProvider & ErrorObservableProvider
+    typealias ViewModel = VM & CatalogProvider
     func showGrid(viewModel: ViewModel)
 }
 
 protocol CatalogTableRoute {
-    typealias ViewModel = CatalogProvider & DisposeBagProvider & ErrorObservableProvider
+    typealias ViewModel = VM & CatalogProvider
     func showTable(viewModel: ViewModel)
 }
 

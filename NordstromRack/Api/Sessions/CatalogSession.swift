@@ -8,11 +8,7 @@
 
 import Foundation
 
-class CatalogSession: SessionProtocol, DiService {
-    
-    static var factory: FactoryClosure = { di in
-        CatalogSession()
-    }
+class CatalogSession: SessionProtocol {
     
     var apiSession: URLSession
     

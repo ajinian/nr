@@ -8,12 +8,7 @@
 
 import Foundation
 
-class CatalogApi: BaseApi, DiService {
-    
-    static var factory: FactoryClosure = { di in
-        CatalogApi()
-    }
-    
+class CatalogApi: BaseApi {
     override var resourceUrl: URL {
         return URL(string: "\(self.baseUrl)/catalog.json")!
     }

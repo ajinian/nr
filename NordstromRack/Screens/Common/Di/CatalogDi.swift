@@ -13,10 +13,22 @@ protocol CatalogRequesting {
     var request: Single<CatalogModel> { get }
 }
 
-extension Di: CatalogRequesting {
+class CatalogDi: Di {
+    override init() {
+        super.init()
+        register(type: CatalogSession.self) { _ in
+            CatalogSession()
+        }
+        register(type: CatalogApi.self) { _ in
+            CatalogApi()
+        }
+    }
+}
+
+extension CatalogDi: CatalogRequesting {
     var request: Single<CatalogModel> {
-        let session = resolve(type: CatalogSession.self)
-        let api = resolve(type: CatalogApi.self)
+        let session = resolve(type: CatalogSession.self)!
+        let api = resolve(type: CatalogApi.self)!
         return ApiRequestBuilder(session: session, api: api, modelType: CatalogModel.self).build()
     }
 }

@@ -9,21 +9,21 @@
 import Foundation
 import RxSwift
 
-class ApiRequestBuilder <Session: SessionProtocol, Api: ApiProtocol, Model: Codable> {
+class ApiRequestBuilder {
     
-    private let session: Session
-    private let api: Api
-    private let modelType: Model.Type
+    private let session: SessionProtocol
+    private let api: ApiProtocol
+    private let modelType: Codable.Type
     
-    init(session: Session, api: Api, modelType: Model.Type) {
+    init(session: SessionProtocol, api: ApiProtocol, modelType: Codable.Type) {
         self.session = session
         self.api = api
         self.modelType = modelType
     }
     
-    func build() -> Single<Model> {
+    func build<T: Codable>() -> Single<T> {
         let request = URLRequest(url: api.resourceUrl)
-        return Single<Model>.create { single in
+        return Single<T>.create { single in
             let task = self.session.apiSession.dataTask(with: request) { (data, response, error) in
                 print(request.url?.absoluteString ?? "")
                 if let error = error {
@@ -31,7 +31,7 @@ class ApiRequestBuilder <Session: SessionProtocol, Api: ApiProtocol, Model: Coda
                     return
                 }
                 let decoder = JSONDecoder()
-                guard let data = data, let model = try? decoder.decode(self.modelType, from: data) else { return }
+                guard let data = data, let model = try? decoder.decode(T.self, from: data) else { return }
                 single(.success(model))
             }
             task.resume()
