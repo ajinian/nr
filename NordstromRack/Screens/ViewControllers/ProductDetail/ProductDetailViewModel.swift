@@ -36,20 +36,23 @@ class ProductDetailViewModel: ViewModel, ProductProvider {
         return Observable.create { observalbe -> Disposable in
             let cache = URLCache.shared
             let request = URLRequest(url: url)
+            let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                if let data = data, let response = response, ((response as? HTTPURLResponse)?.statusCode ?? 500) < 300, let image = UIImage(data: data) {
+                    let cachedData = CachedURLResponse(response: response, data: data)
+                    cache.storeCachedResponse(cachedData, for: request)
+                    observalbe.onNext(image)
+                } else {
+                    observalbe.onNext(UIImage(named: "placeholder"))
+                }
+            })
             if let data = cache.cachedResponse(for: request)?.data, let image = UIImage(data: data) {
                 observalbe.onNext(image)
             } else {
-                URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
-                    if let data = data, let response = response, ((response as? HTTPURLResponse)?.statusCode ?? 500) < 300, let image = UIImage(data: data) {
-                        let cachedData = CachedURLResponse(response: response, data: data)
-                        cache.storeCachedResponse(cachedData, for: request)
-                        observalbe.onNext(image)
-                    } else {
-                        observalbe.onNext(UIImage(named: "placeholder"))
-                    }
-                }).resume()
+                task.resume()
             }
-            return Disposables.create()
+            return Disposables.create {
+                task.cancel()
+            }
         }
     }
     
