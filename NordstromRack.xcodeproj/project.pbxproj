@@ -33,7 +33,6 @@
 		068D7FDD24D5CB5D00AB1549 /* SessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D7FDC24D5CB5D00AB1549 /* SessionProtocol.swift */; };
 		068D7FE124D5DF7200AB1549 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D7FE024D5DF7200AB1549 /* ViewModel.swift */; };
 		068D7FE324D5F4C200AB1549 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D7FE224D5F4C200AB1549 /* ProductTableViewCell.swift */; };
-		068D7FE624D615ED00AB1549 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D7FE524D615ED00AB1549 /* Extensions.swift */; };
 		068D7FE824D6216200AB1549 /* ProductCatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D7FE724D6216200AB1549 /* ProductCatalogViewModel.swift */; };
 		1AE32C703991E8D1496E9AD0 /* Pods_NordstromRackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAC2189669C0C4937559B71 /* Pods_NordstromRackTests.framework */; };
 		9B8AE6655022D77CF6E8E410 /* Pods_NordstromRack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C93757A63D11D94B70A78CAC /* Pods_NordstromRack.framework */; };
@@ -80,7 +79,6 @@
 		068D7FDC24D5CB5D00AB1549 /* SessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionProtocol.swift; sourceTree = "<group>"; };
 		068D7FE024D5DF7200AB1549 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		068D7FE224D5F4C200AB1549 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
-		068D7FE524D615ED00AB1549 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		068D7FE724D6216200AB1549 /* ProductCatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCatalogViewModel.swift; sourceTree = "<group>"; };
 		0BAC2189669C0C4937559B71 /* Pods_NordstromRackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NordstromRackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		153896C37B83E437FD7EA5E4 /* Pods-NordstromRack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NordstromRack.release.xcconfig"; path = "Target Support Files/Pods-NordstromRack/Pods-NordstromRack.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				0661C58424F09948007BF845 /* Di */,
-				068D7FE524D615ED00AB1549 /* Extensions.swift */,
 				068D7FE024D5DF7200AB1549 /* ViewModel.swift */,
 				065CB43124D88B33004F6E4A /* Router.swift */,
 			);
@@ -488,7 +485,6 @@
 				068D7FE124D5DF7200AB1549 /* ViewModel.swift in Sources */,
 				065CB42024D63026004F6E4A /* ProductDetailViewController.swift in Sources */,
 				068D7FCF24D5C09E00AB1549 /* ProductModel.swift in Sources */,
-				068D7FE624D615ED00AB1549 /* Extensions.swift in Sources */,
 				065CB42A24D68DC9004F6E4A /* ProductCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

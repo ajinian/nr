@@ -25,12 +25,11 @@ class ProductCatalogCollectionViewController: CatalogController, CatalogTableRou
             viewModel.catalog.map { catalog -> [ProductModel] in
                 catalog.products
             }.bind(to: collectionView.rx.items(cellIdentifier: "productCollectionViewCell", cellType: ProductCollectionViewCell.self)) { (row, element, cell) in
-                cell.imageView.load(url: element.images.thumbnailUrl, placeholder: UIImage(named: "placeholder"))
-                cell.titleLabel.text = element.name
+                viewModel.productTitle(at: row).bind(to: cell.titleLabel.rx.text).disposed(by: viewModel.disposeBag)
+                viewModel.productImage(at: row).bind(to: cell.imageView.rx.image).disposed(by: viewModel.disposeBag)
             }.disposed(by: viewModel.disposeBag)
             
-            collectionView.rx.itemSelected
-            .subscribe(onNext: { [weak self] indexPath in
+            collectionView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
                 self?.showProductDetail(viewModel: ProductDetailViewModel(index: indexPath.row, catalog: viewModel.catalog))
             }).disposed(by: viewModel.disposeBag)
         }

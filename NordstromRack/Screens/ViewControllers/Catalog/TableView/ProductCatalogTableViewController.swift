@@ -27,9 +27,8 @@ class ProductCatalogTableViewController: CatalogController, ProductDetailRoute, 
             }
             .bind(to: tableView.rx.items(cellIdentifier: "productTableViewCell", cellType: ProductTableViewCell.self)) { (row, element, cell) in
                 cell.textLabel?.text = element.name
-                let placeholder = UIImage(named: "placeholder")
-                cell.imageView?.load(url: element.images.thumbnailUrl, placeholder: placeholder)
-                    
+                viewModel.productTitle(at: row).bind(to: cell.textLabel!.rx.text).disposed(by: viewModel.disposeBag)
+                viewModel.productImage(at: row).bind(to: cell.imageView!.rx.image).disposed(by: viewModel.disposeBag)
             }.disposed(by: viewModel.disposeBag)
             
             tableView.rx.itemSelected

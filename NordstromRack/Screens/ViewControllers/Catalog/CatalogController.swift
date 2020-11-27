@@ -13,6 +13,9 @@ import RxCocoa
 protocol CatalogProvider {
     var catalog: BehaviorRelay<CatalogModel> { get }
     var request: Single<CatalogModel> { get }
+    func productTitle(at index: Int) -> Observable<String?>
+    func productThumbnail(at index: Int) -> Observable<URL?>
+    func productImage(at index: Int) -> Observable<UIImage?>
 }
 
 class CatalogController: UIViewController {

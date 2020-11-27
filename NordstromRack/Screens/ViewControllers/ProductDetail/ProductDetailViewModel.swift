@@ -11,6 +11,48 @@ import RxSwift
 import RxCocoa
 
 class ProductDetailViewModel: ViewModel, ProductProvider {
+    var nameText: Observable<String?> {
+        catalog.map { catalog -> String? in
+            let product = catalog.products[self.index]
+            return product.name
+        }
+    }
+    
+    var detailsText: Observable<String?> {
+        catalog.map { catalog -> String? in
+            let product = catalog.products[self.index]
+            return "\(product.division) \(product.brand) \(product.department)"
+        }
+    }
+    
+    var thumbnailUrl: Observable<URL?> {
+        catalog.map { catalog -> URL? in
+            let product = catalog.products[self.index]
+            return product.images.thumbnailUrl
+        }
+    }
+    
+    func thumbnailImage(url: URL) -> Observable<UIImage?> {
+        return Observable.create { observalbe -> Disposable in
+            let cache = URLCache.shared
+            let request = URLRequest(url: url)
+            if let data = cache.cachedResponse(for: request)?.data, let image = UIImage(data: data) {
+                observalbe.onNext(image)
+            } else {
+                URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                    if let data = data, let response = response, ((response as? HTTPURLResponse)?.statusCode ?? 500) < 300, let image = UIImage(data: data) {
+                        let cachedData = CachedURLResponse(response: response, data: data)
+                        cache.storeCachedResponse(cachedData, for: request)
+                        observalbe.onNext(image)
+                    } else {
+                        observalbe.onNext(UIImage(named: "placeholder"))
+                    }
+                }).resume()
+            }
+            return Disposables.create()
+        }
+    }
+    
     
     var index: Int
     var catalog: BehaviorRelay<CatalogModel>
